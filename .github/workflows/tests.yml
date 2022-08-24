@@ -7,7 +7,7 @@ on:
   push:
     branches: [main, dev, feature/**]
   pull_request:
-    branches: [main, dev, feature/**]
+    branches: [main, dev, feature/**, combine-prs-branch]
 
 jobs:
   tests:
