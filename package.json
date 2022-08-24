@@ -4,7 +4,10 @@
   "description": "this is a hardhat template",
   "main": "hardhat.config.ts",
   "scripts": {
-    "test": "npx hardhat test"
+    "compile": "hardhat compile && hardhat typechain",
+    "test": "hardhat test",
+    "coverage": "hardhat coverage",
+    "prettier": "npx prettier -w ."
   },
   "keywords": [
     "hardhat",
