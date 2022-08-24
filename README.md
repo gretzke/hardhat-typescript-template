@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-AGPLv3-green.svg)](https://www.gnu.org/licenses/agpl-3.0)
 [![CI Status](https://github.com/gretzke/hardhat-typescript-template/actions/workflows/tests.yml/badge.svg)](https://github.com/gretzke/hardhat-typescript-template/actions)
+[![Coverage Status](https://coveralls.io/repos/github/gretzke/hardhat-typescript-template/badge.svg?branch=main&t=ZTUm69)](https://coveralls.io/github/gretzke/hardhat-typescript-template?branch=main)
 
 This project demonstrates an advanced Hardhat use case, integrating other tools commonly used alongside Hardhat in the ecosystem.
 
