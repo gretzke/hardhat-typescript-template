@@ -7,7 +7,9 @@
     "compile": "hardhat compile && hardhat typechain",
     "test": "hardhat test",
     "coverage": "hardhat coverage",
-    "prettier": "npx prettier -w ."
+    "prettier": "npx prettier -w .",
+    "prepare": "husky install",
+    "husky:pre-commit": "npm run prettier && git add ."
   },
   "keywords": [
     "hardhat",
@@ -42,6 +44,7 @@
     "ethers": "^5.5.2",
     "hardhat": "^2.7.0",
     "hardhat-gas-reporter": "^1.0.6",
+    "husky": "^8.0.1",
     "prettier": "^2.5.1",
     "prettier-plugin-solidity": "^1.0.0-beta.19",
     "solhint": "^3.3.6",
