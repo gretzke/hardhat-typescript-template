@@ -1,3 +1,4 @@
+import '@nomiclabs/hardhat-ethers';
 import '@nomiclabs/hardhat-etherscan';
 import '@nomiclabs/hardhat-waffle';
 import '@openzeppelin/hardhat-upgrades';
@@ -14,7 +15,7 @@ const baseConfig: HardhatUserConfig = {
   solidity: {
     compilers: [
       {
-        version: '0.8.14',
+        version: '0.8.16',
         settings: {
           optimizer: {
             enabled: true,
@@ -35,26 +36,35 @@ const baseConfig: HardhatUserConfig = {
   },
 };
 
+const networks = () => {
+  if (process.env.ENV === 'dev') {
+    return {
+      ...baseConfig.networks,
+      goerli: {
+        url: 'https://goerli.infura.io/v3/' + process.env.INFURA_TOKEN,
+        accounts: {
+          mnemonic: process.env.MNEMONIC_DEV as string,
+        },
+      },
+    };
+  } else if (process.env.ENV === 'prod') {
+    return {
+      ...baseConfig.networks,
+      mainnet: {
+        url: 'https://mainnet.infura.io/v3/' + process.env.INFURA_TOKEN,
+        accounts: {
+          mnemonic: process.env.MNEMONIC as string,
+        },
+      },
+    };
+  }
+  return baseConfig.networks;
+};
+
 const config: HardhatUserConfig = {
   ...baseConfig,
-  networks:
-    process.env.ENV === 'dev'
-      ? {
-          ...baseConfig.networks,
-          rinkeby: {
-            url: 'https://rinkeby.infura.io/v3/' + process.env.INFURA_TOKEN,
-            accounts: {
-              mnemonic: process.env.MNEMONIC as string,
-            },
-          },
-        }
-      : baseConfig.networks,
-  etherscan:
-    process.env.ENV === 'dev'
-      ? {
-          apiKey: process.env.ETHERSCAN_TOKEN,
-        }
-      : {},
+  networks: networks(),
+  etherscan: !process.env.ETHERSCAN_TOKEN ? {} : { apiKey: process.env.ETHERSCAN_TOKEN },
 };
 
 task('accounts', 'Prints the list of accounts', async (args, hre) => {
