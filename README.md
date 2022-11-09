@@ -8,11 +8,13 @@ This project demonstrates an advanced Hardhat use case, integrating other tools 
 
 The project comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts. It also comes with a variety of other tools, preconfigured to work with the project code.
 
+This project also includes Foundry for advanced testing like fuzzing.
+
 ## Build and Test
 
 On the project root, run:
 
-```
+```bash
 $ npm i                 # install dependencies
 $ npm run compile       # compile contracts and generate typechain
 $ npm test              # run tests
@@ -20,8 +22,15 @@ $ npm test              # run tests
 
 optional:
 
-```
+```bash
 $ npm run coverage      # run test coverage tool
+```
+
+To run foundry tests:
+
+```bash
+$ forge build           # compile contracts
+$ forge test            # run foundry tests
 ```
 
 ## Etherscan verification
