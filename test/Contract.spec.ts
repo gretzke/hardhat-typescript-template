@@ -18,7 +18,7 @@ describe('Contract', () => {
   });
 
   it('should not be able to pass lower or equal number', async () => {
-    await expect(contract.increase(1)).to.be.revertedWith('ONLY_INCREASE');
+    await expect(contract.increase(1)).to.be.revertedWithCustomError(contract, 'OnlyIncrease').withArgs(1, 1);
   });
 
   it('should be able to increase', async () => {

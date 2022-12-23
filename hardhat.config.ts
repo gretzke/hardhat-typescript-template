@@ -1,12 +1,7 @@
-import '@nomiclabs/hardhat-ethers';
-import '@nomiclabs/hardhat-etherscan';
-import '@nomiclabs/hardhat-waffle';
+import '@nomicfoundation/hardhat-toolbox';
 import '@openzeppelin/hardhat-upgrades';
 import '@primitivefi/hardhat-marmite';
-import '@typechain/hardhat';
-import 'hardhat-gas-reporter';
 import { HardhatUserConfig, task } from 'hardhat/config';
-import 'solidity-coverage';
 require('dotenv').config();
 
 const baseConfig: HardhatUserConfig = {
