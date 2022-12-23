@@ -20,7 +20,7 @@
   "license": "AGPL-3.0-only",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^2.0.0",
-    "@openzeppelin/hardhat-upgrades": "^1.21.0",
+    "@openzeppelin/hardhat-upgrades": "^1.22.0",
     "@primitivefi/hardhat-marmite": "0.0.4",
     "@types/chai": "^4.3.4",
     "@types/node": "^18.11.9",
