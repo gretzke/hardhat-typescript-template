@@ -9,7 +9,8 @@
     "coverage": "hardhat coverage",
     "prettier": "npx prettier -w .",
     "prepare": "husky install",
-    "husky:pre-commit": "npm run prettier && git add ."
+    "husky:pre-commit": "npm run prettier && git add .",
+    "slither": "slither . --filter-paths \"lib|test|node_modules\""
   },
   "keywords": [
     "hardhat",

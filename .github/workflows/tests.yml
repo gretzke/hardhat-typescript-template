@@ -82,12 +82,12 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-
+      - run: rm foundry.toml # force hardhat https://github.com/foundry-rs/foundry/issues/3827
       - name: Run Slither
         uses: crytic/slither-action@v0.2.0
         id: slither
         with:
-          node-version: 16
+          node-version: 18
           sarif: results.sarif
           fail-on: none
 
