@@ -9,11 +9,11 @@ cache
 artifacts
 
 #openzeppelin
-.openzeppelin/*
-!.openzeppelin/unknown-137.json
-!.openzeppelin/mainnet.json
+.openzeppelin/unknown-31337.json
+.openzeppelin/unknown-1337.json
 
 .DS_Store
+
 # Foundry
 forge-cache/
 out/
